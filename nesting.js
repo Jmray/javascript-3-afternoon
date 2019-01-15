@@ -78,17 +78,18 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array.
     3. Return the updated array.
 */
-// function removeDuplicates(){
-//   for(let i = 0; i < workplaceAccidents.length; i++){
-//     for(let ind = 0; ind < workplaceAccidents.length; i++){
-//       if(workplaceAccidents[i] === workplaceAccidents[ind] && i !== ind){
-//         workplaceAccidents.splice(ind, 1);
-//       }
-//     }
-//   }
-//   return workplaceAccidents;
-// }
-//Code Here
+function removeDuplicates(){
+  for(let i = 0; i < workplaceAccidents.length; i++){
+    for(let ind = i + 1; ind < workplaceAccidents.length; ind++){
+      if(workplaceAccidents[i] == workplaceAccidents[ind]){
+        workplaceAccidents.splice(ind, 1);
+        
+      }
+    }
+  }
+  return workplaceAccidents;
+}
+//code here
 
 
 
