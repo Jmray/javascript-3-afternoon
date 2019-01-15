@@ -11,25 +11,25 @@
   In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
 */
 
-// var values = {
-//   one: 'These',
-//   two: ' are',
-//   three: ' the',
-//   four: ' property',
-//   five: ' values.'
-// } 
+var values = {
+  one: 'These',
+  two: ' are',
+  three: ' the',
+  four: ' property',
+  five: ' values.'
+} 
 
-// for(var key in values) {
-//   console.log(values[key])
-// }
+for(var key in values) {
+  console.log(values[key])
+}
 
 /*
   In this next example, we are accessing the property names themselves. Uncomment the code below, run it and look at what prints in the console.
 */
 
-// for(var key in values) {
-//   console.log(key)
-// }
+for(var key in values) {
+  console.log(key)
+}
 
 
 
@@ -40,7 +40,11 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  let result = '';
+  for (let i in obj){
+    result += obj[i];
+  }
+  return result;
 }
 
 
@@ -52,7 +56,15 @@ function showValues( obj ) {
   Write a for in loop that loops over the object and changes any value that is greater than 10 to 0. 
   Return the updated object.
 */
-
+function greaterThan10(obj){
+  for(let i in obj){
+    if(obj[i] > 10){
+      obj[i] = 0;
+      
+    }
+  }
+  return obj;
+}
 //Code Here
 
 
@@ -64,7 +76,12 @@ function showValues( obj ) {
   Write a for in loop that loops over the object and changes every value to be itself multipled by 2.
   Return the updated object.
 */
-
+function double(obj){
+  for(let i in obj){
+    obj[i] += obj[i];
+  }
+  return obj;
+}
 //Code Here
 
 
@@ -78,7 +95,15 @@ function showValues( obj ) {
   If the property name starts with an 'sh', concatenate the value to the string variable.
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
-
+function secrets(obj){
+  let empString = '';
+  for(let i in obj){
+    if(i[0] + i[1] == 'sh'){
+      empString += obj[i];
+    }
+  }
+  return empString;
+}
 //Code Here
 
 
@@ -109,7 +134,11 @@ function showValues( obj ) {
   Write a function called removePassword that takes in an object.
   Delete the property password and return the object.
 */
-
+function removePassword(obj){
+  if(obj.password){
+  delete obj.password;
+  return obj;}
+}
 //Code Here
 
 
@@ -128,7 +157,11 @@ var deleteTheBigNumbers = {
 /*
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
-
+for(let key in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[key] > 100){
+    delete deleteTheBigNumbers[key];
+  }
+}
 //Code Here
 
 
@@ -141,7 +174,14 @@ var deleteTheBigNumbers = {
   If any property name starts with k, delete that property.
   Return the updated object.
 */
-
+function startsWithK(obj){
+  for(let key in obj){
+    if(key[0] == 'k'){
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 //Code Here
 
 
@@ -156,7 +196,14 @@ var deleteTheBigNumbers = {
 
   (hint: the method includes() may be of use...)
 */
-
+function hiddenTreasure(obj){
+  for(let key in obj){
+    if(!obj[key].includes('treasure')){
+      delete obj[key]
+    }
+  }
+  return obj;
+}
 //Code Here
 
 
